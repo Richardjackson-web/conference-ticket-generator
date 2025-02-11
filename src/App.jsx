@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-    <div className='bg-[#02191D] h-screen'>
+    <div className='bg-[#02191D]'>
 
     
       <NavBar />
