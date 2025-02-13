@@ -56,6 +56,7 @@ function AttendeeDetails(){
     // Handle form submission
       const onSubmit = (data) => {
         console.log("Form Data:", data);
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data)); // Ensure latest data is stored
         navigate("/ticketready");
         // localStorage.removeItem(LOCAL_STORAGE_KEY); 
       };
@@ -74,7 +75,14 @@ function AttendeeDetails(){
       },
       (error, result) => {
         if (!error && result.event === "success") {
-          setImageUrl(result.info.secure_url); // Store the image URL
+          const uploadedImageUrl = result.info.secure_url;
+          setImageUrl(uploadedImageUrl); // Store locally in component state
+          setValue("avatar", uploadedImageUrl); // Update form state
+  
+          // Save to Local Storage
+          const currentData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || {};
+          const updatedData = { ...currentData, avatar: uploadedImageUrl };
+          localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedData));
         }
       }
     ).open();
@@ -101,12 +109,12 @@ function AttendeeDetails(){
                             <div className="relative group lg:bg-[#0E464F] w-full h-[160px] rounded-sm">
 
                                 {imageUrl ? (
-                                <img src={imageUrl} alt="uploaded" className="w-[220px] h-[200px] rounded-lg mx-auto" />
+                                <img src={imageUrl} alt="uploaded" className="absolute inset-0 -top-5 w-[220px] h-[200px] rounded-2xl mx-auto" {...register("avatar")} />
 
                                 ) : (
                                     <div className={`absolute inset-0 -top-4.5 join w-[220px] h-[200px] bg-[#0E464F] border-3 border-[#24A0B5] mx-auto rounded-2xl text-center hover:cursor-pointer pt-16 ${
                                         errors.avatar ? "border-red-500" : "border-[#24A0B5]"
-                                      }`} onClick={openWidget} {...register("avatar")}>
+                                      }`} onClick={openWidget}>
                                 <span className="text-white">
                                                 <AiOutlineCloudDownload className="mx-auto text-2xl" />
                                                 <p className="text-xs mt-2">Drag & drop or click to<br /> upload</p>
@@ -115,7 +123,7 @@ function AttendeeDetails(){
                                 )}
                                 {errors.avatar && <p className="text-red-500 text-sm mt-1">{errors.avatar.message}</p>}
                                 {imageUrl &&(
-                                    <div className="absolute inset-0 join w-[220px] h-[200px] bg-[#0E464F] border-3 border-[#24A0B5] mx-auto rounded-2xl text-center hover:cursor-pointer pt-16 opacity-0 group-hover:opacity-50 transition-opacity duration-300" onClick={openWidget}>
+                                    <div className="absolute inset-0 -top-5 join w-[220px] h-[200px] bg-[#0E464F] border-3 border-[#24A0B5] mx-auto rounded-2xl text-center hover:cursor-pointer pt-16 opacity-0 group-hover:opacity-50 transition-opacity duration-300" onClick={openWidget}>
                                     <span className="text-white">
                                                     <AiOutlineCloudDownload className="mx-auto text-2xl" />
                                                     <p className="text-xs mt-2">Drag & drop or click to<br /> upload</p>

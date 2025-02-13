@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaMapPin } from "react-icons/fa";
+// import { FaMapPin } from "react-icons/fa";
 import "../index.css";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -9,58 +9,57 @@ import * as yup from "yup";
 
 const LOCAL_STORAGE_KEY = "contactFormData";
 
-// Yup validation schema
+// ✅ Yup validation schema
 const validationSchema = yup.object().shape({
-    role: yup.string().required("Please select ticket number"),
-    ticket: yup.string().required("Select a ticket"),
+  role: yup.string().required("Please select the number of tickets"),
+  ticket: yup.string().required("Select a ticket type"),
+});
+
+function SelectTicket() {
+  const navigate = useNavigate();
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(validationSchema),
+    defaultValues: JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || {
+      role: "",
+      ticket: "",
+    },
   });
 
+  // ✅ Watch the selected ticket value
+  const selectedTicket = watch("ticket");
 
-function SelectTicket(){
+  // ✅ Function to select ticket and update react-hook-form state
+  const handleSelect = (option) => {
+    setValue("ticket", option);
+  };
 
-    const [selectedTicket, setSelectedTicket] = useState(null);
+  // ✅ Save form data to localStorage in real-time
+  useEffect(() => {
+    const subscription = watch((formData) => {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(formData));
+    });
+    return () => subscription.unsubscribe();
+  }, [watch]);
 
-    const handleSelect = (option) => {
-        setSelectedTicket(option);
-      };
+  // ✅ Submit Handler
+  const onSubmit = (data) => {
+    console.log("Form Submitted:", data);
+    navigate("/attendeedetails");
+  };
 
-
-    const {
-            register,
-            handleSubmit,
-            setValue,
-            watch,
-            formState: { errors },
-          } = useForm({
-            resolver: yupResolver(validationSchema),
-            defaultValues: JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || {
-                role: "",
-                ticket:"",
-            },
-          });
-
-              //   Save form data to Local Storage in real-time
-            useEffect(() => {
-              const subscription = watch((formData) => {
-                localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(formData));
-              });
-              return () => subscription.unsubscribe();
-            }, [watch]);
-
-  // Submit Handler (now only logs the data, no need for extra localStorage update)
-      const onSubmit = (data) => {
-        console.log("Form Submitted:", data);
-
-        };
-
-    const navigate = useNavigate();
-
-     // Function to clear everything
-    const handleCancel = () => {
-    localStorage.clear(); // Clears any stored data (if used)
-    navigate("/"); // Navigates to homepage (or stays here)
-    window.location.reload(); // Refreshes to reset the form
-    };
+  // ✅ Cancel Function (clears localStorage & refreshes)
+  const handleCancel = () => {
+    localStorage.clear();
+    navigate("/");
+    window.location.reload();
+  };
 
     return(
 
