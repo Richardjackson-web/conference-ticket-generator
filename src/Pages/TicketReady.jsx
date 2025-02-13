@@ -16,7 +16,7 @@ function TicketReady(){
 
         <>
 
-                <div className="my-5 lg:mx-94 mx-16 lg:px-12 px-8 py-10 border-2 rounded-4xl border-[#197686] bg-[#05252C]">
+                <div className="my-5 lg:mx-94 mx-7 lg:px-12 px-2 py-10 border-2 rounded-4xl border-[#197686] bg-[#05252C]">
                 
                                     <div style={{fontFamily: 'Jeju'}} className="text-white flex">
                                         <p className="lg:text-3xl text-2xl">Ready</p>
@@ -27,7 +27,7 @@ function TicketReady(){
                                         <p className="join text-xs mt-3">You can download or Check your email for a copy or you can download</p>
                                     </div>
 
-                                    <div className="relative tick lg:w-[40%] lg:h-[400px] h-[400px] mx-auto px-3 py-5">
+                                    <div className="relative tick lg:w-[40%] lg:h-[400px] h-[450px] mx-auto px-3 py-5">
 
                                         <div className="border-2 border-[#197686] rounded-lg text-center">
                                             <h1 className="Tech lg:text-2xl text-5xl text-white">Techember Fest "25</h1>

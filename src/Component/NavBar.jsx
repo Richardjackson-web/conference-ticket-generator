@@ -10,7 +10,7 @@ function NavBar(){
     return(
 
         <>
-            <div className="lg:px-32 px-8 py-10 mx-5">
+            <div className="lg:px-32 px-2 py-10 mx-5">
                 <nav className="flex flex-row border-2 border-[#197686] bg-[#041E23] rounded-2xl px-4 py-3">
                     {/* <div className="basis-1/5">
 

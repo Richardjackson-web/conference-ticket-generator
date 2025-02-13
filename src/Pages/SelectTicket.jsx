@@ -65,10 +65,10 @@ function SelectTicket(){
     return(
 
         <>
-            <div className="mt-6 lg:mx-80 lg:px-12 px-8 mx-10 py-10 border-2 rounded-4xl border-[#197686] bg-[#05252C]">
-                    <div style={{fontFamily: 'Jeju'}} className="text-white lg:flex">
+            <div className="mt-6 lg:mx-80 lg:px-12 px-2 mx-7 py-10 border-2 rounded-4xl border-[#197686] bg-[#05252C]">
+                    <div style={{fontFamily: 'Jeju'}} className="text-white flex">
                         <p className="lg:text-3xl text-2xl">Ticket Selection</p>
-                        <p className="ml-auto">Step 1/3</p>
+                        <p className="ml-auto mt-1">Step 1/3</p>
                     </div>
                     <div className="lg:border-2 rounded-4xl border-[#0E464F] bg-[#08252B] my-5 lg:px-5">
                         <div className="text-center my-5 lg:px-6 py-3 border-2 rounded-4xl border-[#07373F] bg-[#05252C] text-white">

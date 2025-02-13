@@ -86,7 +86,7 @@ function AttendeeDetails(){
     return(
 
         <>
-        <div className="mt-24 lg:mx-94 mx-16 lg:px-12 px-8 py-10 border-2 rounded-4xl border-[#197686] bg-[#05252C]">
+        <div className="mt-5 lg:mx-94 mx-7 lg:px-12 px-2 py-10 border-2 rounded-4xl border-[#197686] bg-[#05252C]">
             <form action="" onSubmit={handleSubmit(onSubmit)}>
 
                     <div style={{fontFamily: 'Jeju'}} className="text-white flex">
