@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AiOutlineCloudDownload } from "react-icons/ai";
 import "../index.css";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -55,9 +56,10 @@ function AttendeeDetails(){
     // Handle form submission
       const onSubmit = (data) => {
         console.log("Form Data:", data);
-        localStorage.removeItem(LOCAL_STORAGE_KEY); //Clear Local Storage
+        navigate("/ticketready");
+        // localStorage.removeItem(LOCAL_STORAGE_KEY); 
       };
-
+//Clear Local Storage
       
 
 
@@ -77,6 +79,9 @@ function AttendeeDetails(){
       }
     ).open();
   };
+
+
+  const navigate = useNavigate();
 
     return(
 
@@ -117,36 +122,8 @@ function AttendeeDetails(){
                                                 </span> 
                                     </div>
                                 )}
-                                {/* <div className="join w-[180px] h-[200px] bg-[#0E464F] mx-auto rounded-2xl text-center hover:cursor-pointer pt-10" onClick={openWidget}>
-                                <span className="text-white">
-                                                <AiOutlineCloudDownload className="mx-auto text-2xl" />
-                                                <p>Drag & drop or click to upload</p>
-                                            </span>
-                                    {imageUrl && (
-                                        <img src={imageUrl} alt="uploaded" className="w-[180px] h-[200px] rounded-lg" />
-                                    )} */}
-
-                                        {/* {selectedImage ? (
-                                         <img src={selectedImage} alt="Uploaded" className="w-[180px] h-[200px] rounded-lg" />
-                                            ) : (
-                                            <span className="text-white">
-                                                <AiOutlineCloudDownload className="mx-auto text-2xl" />
-                                                <p>Drag & drop or click to upload</p>
-                                            </span>
-                                                )} */}
                                     
                                 </div>
-
-                                {/* Hidden file input */}
-                                        {/* <input
-                                            type="file"
-                                            ref={fileInputRef}
-                                            className="hidden"
-                                            accept="image/*"
-                                            onChange={handleFileChange}
-                                        /> */}
-                                    
-                            
                         
                         </div>
                         
@@ -180,8 +157,8 @@ function AttendeeDetails(){
                             </div>
 
                             <div className="grid lg:grid-cols-2 gap-4 my-7 lg:bg-[#041E23] px-8 rounded-2xl">
-                                <button style={{fontFamily: 'Jeju'}} className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg">Back</button>
-                                <button type="submit" style={{fontFamily: 'Jeju'}} className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg">Get My Free Ticket</button>
+                                <button onClick={()=> navigate("/")} style={{fontFamily: 'Jeju'}} className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg">Back</button>
+                                <button onClick={()=> navigate("/ticketready")} type="submit" style={{fontFamily: 'Jeju'}} className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg">Get My Free Ticket</button>
                             </div>
                         </div>
                     </div>
