@@ -18,3 +18,7 @@
 .alat{
     font-family: "Alatsi", serif;
 }
+.tick{
+    background-image: url(../src/assets/TICKET.png);
+    background-size: 100% 100%;
+}

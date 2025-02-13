@@ -94,31 +94,31 @@ function AttendeeDetails(){
                         <p className="ml-auto">Step 2/3</p>
                     </div>
                     <div className="lg:border-2 rounded-4xl border-[#197686] bg-[#08252B] my-5 lg:px-5">
-                        <div className="join my-5 lg:px-6 py-3 border-2 rounded-4xl border-[#07373F] bg-[#05252C] text-white">
-                            <h1 className="py-4 px-3">Upload Profile Photo</h1>
+                        <div className="join my-5 lg:px-6 py-10 border-2 rounded-4xl border-[#07373F] bg-[#05252C] text-white">
+                            <h1 className="pb-7 px-3">Upload Profile Photo</h1>
                             
                             
-                            <div className="relative group bg-[#000000] rounded-sm">
+                            <div className="relative group lg:bg-[#0E464F] w-full h-[160px] rounded-sm">
 
                                 {imageUrl ? (
-                                <img src={imageUrl} alt="uploaded" className="w-[180px] h-[200px] rounded-lg mx-auto" />
+                                <img src={imageUrl} alt="uploaded" className="w-[220px] h-[200px] rounded-lg mx-auto" />
 
                                 ) : (
-                                    <div className={`join w-[180px] h-[200px] bg-[#0E464F] mx-auto rounded-2xl text-center hover:cursor-pointer pt-16 ${
-                                        errors.avatar ? "border-red-500" : "border-gray-300"
+                                    <div className={`absolute inset-0 -top-4.5 join w-[220px] h-[200px] bg-[#0E464F] border-3 border-[#24A0B5] mx-auto rounded-2xl text-center hover:cursor-pointer pt-16 ${
+                                        errors.avatar ? "border-red-500" : "border-[#24A0B5]"
                                       }`} onClick={openWidget} {...register("avatar")}>
                                 <span className="text-white">
                                                 <AiOutlineCloudDownload className="mx-auto text-2xl" />
-                                                <p>Drag & drop or click to upload</p>
+                                                <p className="text-xs mt-2">Drag & drop or click to<br /> upload</p>
                                             </span> 
                                 </div>
                                 )}
                                 {errors.avatar && <p className="text-red-500 text-sm mt-1">{errors.avatar.message}</p>}
                                 {imageUrl &&(
-                                    <div className="absolute inset-0 join w-[180px] h-[200px] bg-[#0E464F] mx-auto rounded-2xl text-center hover:cursor-pointer pt-16 opacity-0 group-hover:opacity-50 transition-opacity duration-300" onClick={openWidget}>
+                                    <div className="absolute inset-0 join w-[220px] h-[200px] bg-[#0E464F] border-3 border-[#24A0B5] mx-auto rounded-2xl text-center hover:cursor-pointer pt-16 opacity-0 group-hover:opacity-50 transition-opacity duration-300" onClick={openWidget}>
                                     <span className="text-white">
                                                     <AiOutlineCloudDownload className="mx-auto text-2xl" />
-                                                    <p>Drag & drop or click to upload</p>
+                                                    <p className="text-xs mt-2">Drag & drop or click to<br /> upload</p>
                                                 </span> 
                                     </div>
                                 )}
@@ -129,34 +129,34 @@ function AttendeeDetails(){
                         
                         <hr className="border-2 border-[#07373F] my-6"/>
 
-                        <div className="text-white join">
+                        <div className="text-white join text-sm">
                             <div>
-                                <label htmlFor="">Enter your name</label>
-                                <input type="text" className={`w-full py-2 rounded-lg border-1 border-[#07373F] ${errors.name ? "border-red-500" : "border-gray-300"}`} {...register("name")} />
+                                <label className="" htmlFor="">Enter your name</label>
+                                <input type="text" className={`w-full py-3 mt-2 rounded-lg border-1 border-[#07373F] ${errors.name ? "border-red-500" : "border-[#24A0B5]"}`} {...register("name")} />
                                 {errors.name && (
             <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
           )}
                             </div>
                             <div className="mt-5">
                                 <label htmlFor="">Enter your email *</label>
-                                <input type="email" className={`w-full py-2 rounded-lg border-1 border-[#07373F] ${
-              errors.email ? "border-red-500" : "border-gray-300"
+                                <input placeholder="hello@avioflagos.io" type="email" className={`w-full py-3 mt-2 rounded-lg border-1 border-[#07373F] ${
+              errors.email ? "border-red-500" : "border-[#24A0B5]"
             }`} {...register("email")} />
             {errors.email && (
             <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
           )}
                             </div>
                             <div className="mt-5">
-                                <label htmlFor="">About the project</label><br />
-                                <textarea name="" id=""  className={`w-full py-6 rounded-lg border-1 border-[#07373F] ${
-              errors.message ? "border-red-500" : "border-gray-300"
+                                <label htmlFor="">Special request?</label><br />
+                                <textarea placeholder="Textarea" name="" id=""  className={`w-full py-10 mt-2 rounded-lg border-1 border-[#07373F] ${
+              errors.message ? "border-red-500" : "border-[#24A0B5]"
             }`} {...register("message")}></textarea>
             {errors.message && (
             <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
           )}
                             </div>
 
-                            <div className="grid lg:grid-cols-2 gap-4 my-7 lg:bg-[#041E23] px-8 rounded-2xl">
+                            <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
                                 <button onClick={()=> navigate("/")} style={{fontFamily: 'Jeju'}} className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg">Back</button>
                                 <button onClick={()=> navigate("/ticketready")} type="submit" style={{fontFamily: 'Jeju'}} className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg">Get My Free Ticket</button>
                             </div>
