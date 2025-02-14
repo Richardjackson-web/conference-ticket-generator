@@ -4,6 +4,7 @@ import "../index.css";
 import Bar from "../assets/bar.png";
 import User from "../assets/user.png";
 import html2canvas from "html2canvas";
+import ProgressBar from "../Component/ProgressBar";
 
 const LOCAL_STORAGE_KEY = "contactFormData";
 
@@ -47,6 +48,7 @@ function TicketReady() {
           <p className="lg:text-3xl text-2xl">Ready</p>
           <p className="ml-auto">Step 3/3</p>
         </div>
+        <ProgressBar />
         <div className="rounded-4xl text-center bg-[#08252B] my-5 lg:px-5 text-white">
           <p className="alat text-2xl">Your Ticket is Booked!</p>
           <p className="join text-xs mt-3">

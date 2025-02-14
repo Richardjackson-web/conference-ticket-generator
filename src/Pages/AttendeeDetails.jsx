@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import ProgressBar from "../Component/ProgressBar";
 
 const LOCAL_STORAGE_KEY = "contactFormData";
 
@@ -100,6 +101,7 @@ function AttendeeDetails() {
             <p className="lg:text-3xl text-2xl">Attendee Details</p>
             <p className="ml-auto">Step 2/3</p>
           </div>
+          <ProgressBar />
           <div className="lg:border-2 rounded-4xl border-[#197686] bg-[#08252B] my-5 lg:px-5">
             <div className="join my-5 lg:px-6 py-10 border-2 rounded-4xl border-[#07373F] bg-[#05252C] text-white">
               <h1 className="pb-7 px-3">Upload Profile Photo</h1>

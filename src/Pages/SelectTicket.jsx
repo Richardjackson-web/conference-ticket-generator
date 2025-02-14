@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import ProgressBar from "../Component/ProgressBar";
 
 const LOCAL_STORAGE_KEY = "contactFormData";
 
@@ -66,6 +67,7 @@ function SelectTicket() {
           <p className="lg:text-3xl text-2xl">Ticket Selection</p>
           <p className="ml-auto mt-1">Step 1/3</p>
         </div>
+        <ProgressBar />
         <div className="lg:border-2 rounded-4xl border-[#0E464F] bg-[#08252B] my-5 lg:px-5">
           <div className="text-center my-5 lg:px-6 py-3 border-2 rounded-4xl border-[#07373F] bg-[#05252C] text-white">
             <h1 className="Tech lg:text-6xl text-5xl text-white">
