@@ -75,9 +75,9 @@ function AttendeeDetails() {
         },
         (error, result) => {
           if (!error && result.event === "success") {
-            const uploadedImageUrl = result.info.secure_url;
-            setImageUrl(uploadedImageUrl); // Store locally in component state
-            setValue("avatar", uploadedImageUrl); // Update form state
+            // const uploadedImageUrl = result.info.secure_url;
+            setImageUrl(result.info.secure_url); // Store locally in component state
+            setValue("avatar", result.info.secure_url, { shouldValidate: true }); // Register with react-hook-form
 
             // Save to Local Storage
             const currentData =
