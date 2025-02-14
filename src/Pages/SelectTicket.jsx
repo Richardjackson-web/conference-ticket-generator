@@ -77,12 +77,12 @@ function SelectTicket() {
             <p className="join lg:text-sm text-sm my-2">
               Join us for an unforgettable <br className="lg:hidden block" />{" "}
               experience at
-              <br className="lg:block hidden" /> [Event Name]! Secure{" "}
+              <br className="lg:block hidden" /> Techember Fest "25! Secure{" "}
               <br className="lg:hidden block" /> your spot now.
             </p>
             <div className="text-center mt-6 lg:mt-0">
               <p className="join lg:text-sm text-sm">
-                📍 [Event Location]
+              📍 04 Rumens road, Ikoyi, Lagos.
                 <br className="lg:hidden block" /> || March 15, 2025 | 7:00 PM
               </p>
             </div>

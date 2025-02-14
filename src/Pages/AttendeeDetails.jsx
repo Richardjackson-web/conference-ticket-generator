@@ -161,7 +161,7 @@ function AttendeeDetails() {
                 </label>
                 <input
                   type="text"
-                  className={`w-full py-3 pl-4 mt-2 rounded-lg border-1 border-[#07373F] ${
+                  className={`w-full py-3 pl-4 mt-2 rounded-lg border-1 border-[#07373F] focus:border-[red] focus:border-2 ${
                     errors.name ? "border-red-500" : "border-[#24A0B5]"
                   }`}
                   {...register("name")}

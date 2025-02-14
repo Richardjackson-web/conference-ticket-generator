@@ -58,13 +58,13 @@ function TicketReady() {
 
         <div
           ref={tickRef}
-          className="relative tick lg:w-[40%] lg:h-[480px] h-[470px] mx-auto px-3 py-5"
+          className="relative tick lg:w-[60%] lg:h-[480px] h-[470px] mx-auto px-3 py-5"
         >
           <div className="border-2 border-[#197686] rounded-lg text-center">
-            <h1 className="Tech lg:text-2xl text-5xl text-white pb-2">
+            <h1 className="Tech lg:text-4xl text-5xl text-white pb-3">
               Techember Fest "25
             </h1>
-            <p className="join lg:text-[8px] text-sm text-white">
+            <p className="join lg:text-[11px] text-sm text-white">
               📍 04 Rumens road, Ikoyi, Lagos
               <br /> March 15, 2025 | 7:00 PM
             </p>
