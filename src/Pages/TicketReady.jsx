@@ -125,14 +125,14 @@ function TicketReady() {
           <button
             onClick={() => navigate("/")}
             style={{ fontFamily: "Jeju" }}
-            className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg"
+            className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
           >
             Book Another Ticket
           </button>
           <button
             style={{ fontFamily: "Jeju" }}
             onClick={downloadTicket}
-            className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg"
+            className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
           >
             Download Ticket
           </button>

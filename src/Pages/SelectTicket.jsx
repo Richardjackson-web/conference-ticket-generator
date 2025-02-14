@@ -151,7 +151,7 @@ function SelectTicket() {
               <select
                 name=""
                 id=""
-                className={`w-full border-2 border-[#07373F] bg-[#08252B] rounded-2xl py-3 px-4 text-white ${
+                className={`w-full border-2 border-[#07373F] bg-[#08252B] rounded-2xl py-3 px-4 text-white hover:cursor-pointer ${
                   errors.role ? "border-red-500" : "border-[#07373F]"
                 }`}
                 {...register("role")}
@@ -172,14 +172,14 @@ function SelectTicket() {
                 <button
                   onClick={handleCancel}
                   style={{ fontFamily: "Jeju" }}
-                  className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg"
+                  className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={() => navigate("/attendeedetails")}
                   style={{ fontFamily: "Jeju" }}
-                  className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg"
+                  className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
                 >
                   Next
                 </button>
