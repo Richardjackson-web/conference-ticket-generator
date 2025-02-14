@@ -58,10 +58,10 @@ function TicketReady() {
 
         <div
           ref={tickRef}
-          className="relative tick lg:w-[40%] lg:h-[420px] h-[450px] mx-auto px-3 py-5"
+          className="relative tick lg:w-[40%] lg:h-[480px] h-[470px] mx-auto px-3 py-5"
         >
           <div className="border-2 border-[#197686] rounded-lg text-center">
-            <h1 className="Tech lg:text-2xl text-5xl text-white">
+            <h1 className="Tech lg:text-2xl text-5xl text-white pb-2">
               Techember Fest "25
             </h1>
             <p className="join lg:text-[8px] text-sm text-white">
@@ -79,7 +79,7 @@ function TicketReady() {
                 <div className="grid grid-cols-2">
                   <div className="border-r-1 border-b-1">
                     <p className="text-[8px] text-[#237f91]">Enter your name</p>
-                    <p className="text-[10px] text-white pb-1">
+                    <p className="text-[10px] text-white pb-1 break-words px-1 py-1">
                       {formData.name}
                     </p>
                   </div>
@@ -87,7 +87,7 @@ function TicketReady() {
                     <p className="text-[8px] text-[#237f91]">
                       Enter your email*
                     </p>
-                    <p className="text-[10px] text-white break-words pb-1">
+                    <p className="text-[10px] text-white break-words pb-1 px-1 py-1">
                       {formData.email}
                     </p>
                   </div>
@@ -95,20 +95,20 @@ function TicketReady() {
                 <div className="grid grid-cols-2">
                   <div className="border-r-1 border-b-1">
                     <p className="text-[8px] text-[#237f91]">Ticket Type:</p>
-                    <p className="text-[10px] text-white pb-1">
+                    <p className="text-[10px] text-white pb-1 break-words px-1 py-1">
                       {formData.ticket}
                     </p>
                   </div>
                   <div className="border-b-1">
                     <p className="text-[8px] text-[#237f91]">Ticket for:</p>
-                    <p className="text-[10px] text-white pb-1">
+                    <p className="text-[10px] text-white pb-1 break-words px-1 py-1">
                       {formData.role}
                     </p>
                   </div>
                 </div>
                 <div>
                   <p className="text-[8px] text-[#237f91]">Special request?</p>
-                  <p className="text-[10px] text-white pb-1">
+                  <p className="text-[10px] text-white pb-1 break-words px-1 py-1">
                     {formData.message}
                   </p>
                 </div>

@@ -7,29 +7,28 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import ProgressBar from "../Component/ProgressBar";
 
-const LOCAL_STORAGE_KEY = "contactFormData";
-
-// Yup validation schema
-const validationSchema = yup.object().shape({
-  name: yup.string().required("Name is required"),
-  email: yup
-    .string()
-    .email("Invalid email format")
-    .required("Email is required"),
-  message: yup
-    .string()
-    .min(10, "Message must be at least 10 characters")
-    .required("Message is required"),
-  avatar: yup
-    .string()
-    .url("Invalid URL format")
-    .matches(
-      /\.(jpeg|jpg|gif|png|webp)$/,
-      "Must be a valid image URL (jpeg, jpg, png, gif, webp)"
-    ),
-});
-
 function AttendeeDetails() {
+  const LOCAL_STORAGE_KEY = "contactFormData";
+
+  // Yup validation schema
+  const validationSchema = yup.object().shape({
+    name: yup.string().required("Name is required"),
+    email: yup
+      .string()
+      .email("Invalid email format")
+      .required("Email is required"),
+    message: yup
+      .string()
+      .min(10, "Message must be at least 10 characters")
+      .required("Message is required"),
+    avatar: yup
+      .string()
+      .url("Invalid URL format")
+      .matches(
+        /\.(jpeg|jpg|gif|png|webp)$/,
+        "Must be a valid image URL (jpeg, jpg, png, gif, webp)"
+      ),
+  });
   const navigate = useNavigate();
 
   const {
@@ -59,7 +58,7 @@ function AttendeeDetails() {
   const onSubmit = (data) => {
     console.log("Form Data:", data);
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data)); // Ensure latest data is stored
-    // navigate("/ticketready");
+    navigate("/ticketready");
     // localStorage.removeItem(LOCAL_STORAGE_KEY);
   };
   //Clear Local Storage
@@ -209,14 +208,13 @@ function AttendeeDetails() {
 
               <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
                 <button
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate(-1)}
                   style={{ fontFamily: "Jeju" }}
                   className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
                 >
                   Back
                 </button>
                 <button
-                  onClick={() => navigate("/ticketready")}
                   type="submit"
                   style={{ fontFamily: "Jeju" }}
                   className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"

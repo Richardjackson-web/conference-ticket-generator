@@ -50,12 +50,13 @@ function SelectTicket() {
   // Submit Handler
   const onSubmit = (data) => {
     console.log("Form Submitted:", data);
-    // navigate("/attendeedetails");
+    navigate("/attendeedetails");
   };
 
   // Cancel Function (clears localStorage & refreshes)
   const handleCancel = () => {
     localStorage.clear();
+    // reset({selectedTicket:""});
     navigate("/");
     window.location.reload();
   };
@@ -172,6 +173,7 @@ function SelectTicket() {
 
               <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
                 <button
+                  type="button"
                   onClick={handleCancel}
                   style={{ fontFamily: "Jeju" }}
                   className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
@@ -179,7 +181,6 @@ function SelectTicket() {
                   Cancel
                 </button>
                 <button
-                  onClick={() => navigate("/attendeedetails")}
                   style={{ fontFamily: "Jeju" }}
                   className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
                 >
