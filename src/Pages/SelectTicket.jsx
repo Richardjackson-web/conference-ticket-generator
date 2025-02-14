@@ -63,7 +63,7 @@ function SelectTicket() {
 
   return (
     <>
-      <div className="mt-6 lg:mx-80 lg:px-12 px-2 mx-7 py-10 border-2 rounded-4xl border-[#197686] bg-[#05252C]">
+      <div className="mt-6 lg:mx-94 lg:px-12 px-2 mx-7 py-10 border-2 rounded-4xl border-[#197686] bg-[#05252C]">
         <div style={{ fontFamily: "Jeju" }} className="text-white flex">
           <p className="lg:text-3xl text-2xl">Ticket Selection</p>
           <p className="ml-auto mt-1">Step 1/3</p>
@@ -97,9 +97,9 @@ function SelectTicket() {
               </h1>
               <div className="grid lg:grid-cols-3 gap-2 bg-[#052228] border-2 border-[#07373F] rounded-2xl px-2 py-2">
                 <div
-                  className={`text-white py-3 px-3 border-2 border-[#197686] rounded-lg join hover:cursor-pointer ${
+                  className={`text-white py-3 px-3 border-2 border-[#197686] rounded-lg join hover:cursor-pointer hover:bg-[#2C545B] ${
                     selectedTicket === "Regular Access"
-                      ? "bg-[#197686]"
+                      ? "bg-[#12464E]"
                       : "bg-[#052228]"
                   } ${errors.ticket ? "border-red-500" : "border-[#07373F]"}`}
                   {...register("ticket")}
@@ -107,14 +107,14 @@ function SelectTicket() {
                 >
                   <div className="join">
                     <p className="font-extrabold text-2xl">Free</p>
-                    <p className="text-sm">REGULAR ACCESS</p>
+                    <p className="text-[12px]">REGULAR ACCESS</p>
                     <p className="font-light text-xs">20/52</p>
                   </div>
                 </div>
                 <div
-                  className={`text-white py-3 px-3 border-2 border-[#197686] rounded-lg join hover:cursor-pointer ${
+                  className={`text-white py-3 px-3 border-2 border-[#197686] rounded-lg join hover:cursor-pointer hover:bg-[#2C545B] ${
                     selectedTicket === "VIP Access"
-                      ? "bg-[#197686]"
+                      ? "bg-[#12464E]"
                       : "bg-[#052228]"
                   } ${errors.ticket ? "border-red-500" : "border-[#07373F]"}`}
                   {...register("ticket")}
@@ -122,14 +122,14 @@ function SelectTicket() {
                 >
                   <div className="join">
                     <p className="font-extrabold text-2xl">$150</p>
-                    <p className="text-sm">VIP ACCESS</p>
+                    <p className="text-[12px]">VIP ACCESS</p>
                     <p className="font-light text-xs">20/52</p>
                   </div>
                 </div>
                 <div
-                  className={`text-white py-3 px-3 border-2 border-[#197686] rounded-lg join hover:cursor-pointer ${
+                  className={`text-white py-3 px-3 border-2 border-[#197686] rounded-lg join hover:cursor-pointer hover:bg-[#2C545B] ${
                     selectedTicket === "VVIP Access"
-                      ? "bg-[#197686]"
+                      ? "bg-[#12464E]"
                       : "bg-[#052228]"
                   } ${errors.ticket ? "border-red-500" : "border-[#07373F]"}`}
                   {...register("ticket")}
@@ -137,7 +137,7 @@ function SelectTicket() {
                 >
                   <div className="join">
                     <p className="font-extrabold text-2xl">$150</p>
-                    <p className="text-sm">VVIP ACCESS</p>
+                    <p className="text-[12px]">VVIP ACCESS</p>
                     <p className="font-light text-xs">20/52</p>
                   </div>
                 </div>
@@ -171,6 +171,7 @@ function SelectTicket() {
                 </p>
               )}
 
+              <div className="lg:block hidden">
               <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
                 <button
                   type="button"
@@ -186,6 +187,26 @@ function SelectTicket() {
                 >
                   Next
                 </button>
+              </div>
+              </div>
+              
+              <div className="lg:hidden block">
+              <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
+                <button
+                  style={{ fontFamily: "Jeju" }}
+                  className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
+                >
+                  Next
+                </button>
+                <button
+                  type="button"
+                  onClick={handleCancel}
+                  style={{ fontFamily: "Jeju" }}
+                  className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
+                >
+                  Cancel
+                </button>
+              </div>
               </div>
             </div>
           </form>

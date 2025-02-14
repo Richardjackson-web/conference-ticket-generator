@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import ProgressBar from "../Component/ProgressBar";
+import { MdOutlineMail } from "react-icons/md";
 
 function AttendeeDetails() {
   const LOCAL_STORAGE_KEY = "contactFormData";
@@ -160,7 +161,7 @@ function AttendeeDetails() {
                 </label>
                 <input
                   type="text"
-                  className={`w-full py-3 mt-2 rounded-lg border-1 border-[#07373F] ${
+                  className={`w-full py-3 pl-4 mt-2 rounded-lg border-1 border-[#07373F] ${
                     errors.name ? "border-red-500" : "border-[#24A0B5]"
                   }`}
                   {...register("name")}
@@ -171,16 +172,17 @@ function AttendeeDetails() {
                   </p>
                 )}
               </div>
-              <div className="mt-5">
+              <div className="mt-5 relative">
                 <label htmlFor="">Enter your email *</label>
                 <input
                   placeholder="hello@avioflagos.io"
                   type="email"
-                  className={`w-full py-3 mt-2 rounded-lg border-1 border-[#07373F] ${
+                  className={`w-full py-3 pl-8 mt-2 rounded-lg border-1 border-[#07373F] ${
                     errors.email ? "border-red-500" : "border-[#24A0B5]"
                   }`}
                   {...register("email")}
                 />
+                <MdOutlineMail className="absolute top-10 left-2 text-xl text-white" />
                 {errors.email && (
                   <p className="text-red-500 text-sm mt-1">
                     {errors.email.message}
@@ -194,7 +196,7 @@ function AttendeeDetails() {
                   placeholder="Textarea"
                   name=""
                   id=""
-                  className={`w-full py-10 mt-2 rounded-lg border-1 border-[#07373F] ${
+                  className={`w-full py-10 pl-4 mt-2 rounded-lg border-1 border-[#07373F] ${
                     errors.message ? "border-red-500" : "border-[#24A0B5]"
                   }`}
                   {...register("message")}
@@ -206,6 +208,7 @@ function AttendeeDetails() {
                 )}
               </div>
 
+              <div className="lg:block hidden">
               <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
                 <button
                   onClick={() => navigate(-1)}
@@ -221,6 +224,26 @@ function AttendeeDetails() {
                 >
                   Get My Ticket
                 </button>
+              </div>
+              </div>
+
+              <div className="lg:hidden block">
+              <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
+              <button
+                  type="submit"
+                  style={{ fontFamily: "Jeju" }}
+                  className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
+                >
+                  Get My Ticket
+                </button>
+                <button
+                  onClick={() => navigate(-1)}
+                  style={{ fontFamily: "Jeju" }}
+                  className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
+                >
+                  Back
+                </button>
+              </div>
               </div>
             </div>
           </div>

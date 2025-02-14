@@ -123,6 +123,7 @@ function TicketReady() {
             alt=""
           />
         </div>
+        <div className="lg:block hidden">
         <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
           <button
             onClick={() => navigate("/")}
@@ -138,6 +139,26 @@ function TicketReady() {
           >
             Download Ticket
           </button>
+        </div>
+        </div>
+
+        <div className="lg:hidden block">
+        <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
+          <button
+            style={{ fontFamily: "Jeju" }}
+            onClick={downloadTicket}
+            className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
+          >
+            Download Ticket
+          </button>
+          <button
+            onClick={() => navigate("/")}
+            style={{ fontFamily: "Jeju" }}
+            className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
+          >
+            Book Another Ticket
+          </button>
+        </div>
         </div>
       </div>
     </>

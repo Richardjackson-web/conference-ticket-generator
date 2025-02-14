@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import TiczImg from "../assets/tiez.png";
 import TiczText from "../assets/ticz.png";
 import { HiArrowLongRight } from "react-icons/hi2";
+import { BsArrowUpRight } from "react-icons/bs";
 
 function NavBar() {
+
+
+    const { btnHover, setBtnHover } = useState(false);
+
   return (
     <>
       <div className="lg:px-32 px-2 py-10 mx-5">
@@ -40,9 +45,9 @@ function NavBar() {
           <div className="basis-1/2 lg:basis-1/3">
             <button
               style={{ fontFamily: "Jeju" }}
-              className="flex ml-auto bg-white lg:px-5 lg:py-2 px-2.5 py-2 rounded-lg text-[13px] lg:text-1xl"
+              className="flex ml-auto bg-white lg:px-5 lg:py-2 px-2.5 py-2 rounded-lg text-[13px] lg:text-1xl hover:cursor-pointer transition-all duration-300 hover:bg-[#24A0B5] hover:text-white"
             >
-              MY TICKETS <HiArrowLongRight className="mt-1 ml-1" />
+              MY TICKETS {btnHover ? <BsArrowUpRight className="mt-1 ml-1" /> : <HiArrowLongRight className="mt-1 ml-1" />}  
             </button>
           </div>
           {/* <div className="basis-1/5">
