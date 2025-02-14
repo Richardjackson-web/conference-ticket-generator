@@ -1,24 +1,24 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Road+Rage&display=swap');
-@font-face{
-    font-family: 'Jeju';
-    src:url("../src/assets/fonts/JejuMyeongjo-Regular.ttf") format('truetype');
-    font-weight: normal;
-    font-style: normal;
+@import url("https://fonts.googleapis.com/css2?family=Road+Rage&display=swap");
+@font-face {
+  font-family: "Jeju";
+  src: url("../src/assets/fonts/JejuMyeongjo-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-.Tech{
-    font-family: "Road Rage", serif;
+.Tech {
+  font-family: "Road Rage", serif;
   font-weight: 400;
   font-style: normal;
 }
-.join{
-    font-family: "Roboto", serif;
+.join {
+  font-family: "Roboto", serif;
 }
-.alat{
-    font-family: "Alatsi", serif;
+.alat {
+  font-family: "Alatsi", serif;
 }
-.tick{
-    background-image: url(../src/assets/TICKET.png);
-    background-size: 100% 100%;
+.tick {
+  background-image: url(../src/assets/TICKET.png);
+  background-size: 100% 100%;
 }
