@@ -75,9 +75,9 @@ function AttendeeDetails() {
         },
         (error, result) => {
           if (!error && result.event === "success") {
-            // const uploadedImageUrl = result.info.secure_url;
-            setImageUrl(result.info.secure_url); // Store locally in component state
-            setValue("avatar", result.info.secure_url, { shouldValidate: true }); // Register with react-hook-form
+            const uploadedImageUrl = result.info.secure_url;
+            setImageUrl(uploadedImageUrl); // Store locally in component state
+            setValue("avatar", uploadedImageUrl); // Update form state
 
             // Save to Local Storage
             const currentData =
@@ -130,7 +130,7 @@ function AttendeeDetails() {
                     </span>
                   </div>
                 )}
-
+                
                 {imageUrl && (
                   <div
                     className="absolute inset-0 -top-5 join w-[220px] h-[200px] bg-[#0E464F] border-3 border-[#24A0B5] mx-auto rounded-2xl text-center hover:cursor-pointer pt-16 opacity-0 group-hover:opacity-50 transition-opacity duration-300"
@@ -145,12 +145,13 @@ function AttendeeDetails() {
                     </span>
                   </div>
                 )}
+                
               </div>
               {errors.avatar && (
-                <p className="text-red-500 text-sm text-center mt-8">
-                  {errors.avatar.message}
-                </p>
-              )}
+                  <p className="text-red-500 text-sm text-center mt-8">
+                    {errors.avatar.message}
+                  </p>
+                )}
             </div>
 
             <hr className="border-2 border-[#07373F] my-6" />
@@ -210,41 +211,41 @@ function AttendeeDetails() {
               </div>
 
               <div className="lg:block hidden">
-                <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
-                  <button
-                    onClick={() => navigate(-1)}
-                    style={{ fontFamily: "Jeju" }}
-                    className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
-                  >
-                    Back
-                  </button>
-                  <button
-                    type="submit"
-                    style={{ fontFamily: "Jeju" }}
-                    className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
-                  >
-                    Get My Ticket
-                  </button>
-                </div>
+              <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
+                <button
+                  onClick={() => navigate(-1)}
+                  style={{ fontFamily: "Jeju" }}
+                  className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
+                >
+                  Back
+                </button>
+                <button
+                  type="submit"
+                  style={{ fontFamily: "Jeju" }}
+                  className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
+                >
+                  Get My Ticket
+                </button>
+              </div>
               </div>
 
               <div className="lg:hidden block">
-                <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
-                  <button
-                    type="submit"
-                    style={{ fontFamily: "Jeju" }}
-                    className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
-                  >
-                    Get My Ticket
-                  </button>
-                  <button
-                    onClick={() => navigate(-1)}
-                    style={{ fontFamily: "Jeju" }}
-                    className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
-                  >
-                    Back
-                  </button>
-                </div>
+              <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
+              <button
+                  type="submit"
+                  style={{ fontFamily: "Jeju" }}
+                  className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
+                >
+                  Get My Ticket
+                </button>
+                <button
+                  onClick={() => navigate(-1)}
+                  style={{ fontFamily: "Jeju" }}
+                  className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
+                >
+                  Back
+                </button>
+              </div>
               </div>
             </div>
           </div>
