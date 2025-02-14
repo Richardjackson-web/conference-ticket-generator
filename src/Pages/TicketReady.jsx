@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "../index.css";
 import Bar from "../assets/bar.png";
-import User from "../assets/user.png";
 import html2canvas from "html2canvas";
 import ProgressBar from "../Component/ProgressBar";
 
@@ -58,7 +57,7 @@ function TicketReady() {
 
         <div
           ref={tickRef}
-          className="relative tick lg:w-[60%] lg:h-[480px] h-[470px] mx-auto px-3 py-5"
+          className="relative tick lg:w-[60%] lg:h-[530px] h-[500px] mx-auto px-3 py-5"
         >
           <div className="border-2 border-[#197686] rounded-lg text-center">
             <h1 className="Tech lg:text-4xl text-5xl text-white pb-3">
@@ -68,11 +67,13 @@ function TicketReady() {
               📍 04 Rumens road, Ikoyi, Lagos
               <br /> March 15, 2025 | 7:00 PM
             </p>
-            <img
-              className="mx-auto w-[100px] h-[120px] mt-3 rounded-lg border-4 border-[#197686]"
-              src={formData?.avatar ? formData.avatar : User}
-              alt="User Avatar"
-            />
+            {formData?.avatar && (
+              <img
+                className="mx-auto w-[100px] h-[120px] mt-3 rounded-lg border-4 border-[#197686]"
+                src={formData.avatar}
+                alt="User Avatar"
+              />
+            )}
 
             {formData ? (
               <div className="join text-[8px] mt-3 text-left border-[2px] bg-[#08292e] border-[#08252B]">
@@ -124,41 +125,41 @@ function TicketReady() {
           />
         </div>
         <div className="lg:block hidden">
-        <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
-          <button
-            onClick={() => navigate("/")}
-            style={{ fontFamily: "Jeju" }}
-            className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
-          >
-            Book Another Ticket
-          </button>
-          <button
-            style={{ fontFamily: "Jeju" }}
-            onClick={downloadTicket}
-            className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
-          >
-            Download Ticket
-          </button>
-        </div>
+          <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
+            <button
+              onClick={() => navigate("/")}
+              style={{ fontFamily: "Jeju" }}
+              className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
+            >
+              Book Another Ticket
+            </button>
+            <button
+              style={{ fontFamily: "Jeju" }}
+              onClick={downloadTicket}
+              className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
+            >
+              Download Ticket
+            </button>
+          </div>
         </div>
 
         <div className="lg:hidden block">
-        <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
-          <button
-            style={{ fontFamily: "Jeju" }}
-            onClick={downloadTicket}
-            className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
-          >
-            Download Ticket
-          </button>
-          <button
-            onClick={() => navigate("/")}
-            style={{ fontFamily: "Jeju" }}
-            className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
-          >
-            Book Another Ticket
-          </button>
-        </div>
+          <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
+            <button
+              style={{ fontFamily: "Jeju" }}
+              onClick={downloadTicket}
+              className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
+            >
+              Download Ticket
+            </button>
+            <button
+              onClick={() => navigate("/")}
+              style={{ fontFamily: "Jeju" }}
+              className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
+            >
+              Book Another Ticket
+            </button>
+          </div>
         </div>
       </div>
     </>

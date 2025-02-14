@@ -82,7 +82,7 @@ function SelectTicket() {
             </p>
             <div className="text-center mt-6 lg:mt-0">
               <p className="join lg:text-sm text-sm">
-              📍 04 Rumens road, Ikoyi, Lagos.
+                📍 04 Rumens road, Ikoyi, Lagos.
                 <br className="lg:hidden block" /> || March 15, 2025 | 7:00 PM
               </p>
             </div>
@@ -172,41 +172,41 @@ function SelectTicket() {
               )}
 
               <div className="lg:block hidden">
-              <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
-                <button
-                  type="button"
-                  onClick={handleCancel}
-                  style={{ fontFamily: "Jeju" }}
-                  className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
-                >
-                  Cancel
-                </button>
-                <button
-                  style={{ fontFamily: "Jeju" }}
-                  className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
-                >
-                  Next
-                </button>
+                <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
+                  <button
+                    type="button"
+                    onClick={handleCancel}
+                    style={{ fontFamily: "Jeju" }}
+                    className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    style={{ fontFamily: "Jeju" }}
+                    className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
+                  >
+                    Next
+                  </button>
+                </div>
               </div>
-              </div>
-              
+
               <div className="lg:hidden block">
-              <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
-                <button
-                  style={{ fontFamily: "Jeju" }}
-                  className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
-                >
-                  Next
-                </button>
-                <button
-                  type="button"
-                  onClick={handleCancel}
-                  style={{ fontFamily: "Jeju" }}
-                  className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
-                >
-                  Cancel
-                </button>
-              </div>
+                <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
+                  <button
+                    style={{ fontFamily: "Jeju" }}
+                    className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
+                  >
+                    Next
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleCancel}
+                    style={{ fontFamily: "Jeju" }}
+                    className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
+                  >
+                    Cancel
+                  </button>
+                </div>
               </div>
             </div>
           </form>
