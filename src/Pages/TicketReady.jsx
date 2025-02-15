@@ -41,6 +41,17 @@ function TicketReady() {
     });
   };
 
+  const backHome = (data)=>{
+    console.log("Form Data:", data);
+    localStorage.removeItem(LOCAL_STORAGE_KEY);
+    navigate("/");
+  }
+
+  // const handleSubmit = (data) =>{
+  //   localStorage.removeItem(LOCAL_STORAGE_KEY);
+  // }
+
+
   return (
     <>
       <div className="my-5 lg:mx-94 mx-7 lg:px-12 px-2 py-10 border-2 rounded-4xl border-[#197686] bg-[#05252C]">
@@ -123,10 +134,15 @@ function TicketReady() {
             alt=""
           />
         </div>
+        
+
+
+
         <div className="lg:block hidden">
         <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
           <button
-            onClick={() => navigate("/")}
+          // type="submit"
+            onClick={()=> backHome()}
             style={{ fontFamily: "Jeju" }}
             className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
           >
@@ -152,7 +168,8 @@ function TicketReady() {
             Download Ticket
           </button>
           <button
-            onClick={() => navigate("/")}
+          // type="submit"
+          onClick={()=> backHome()}
             style={{ fontFamily: "Jeju" }}
             className="border-2 border-[#24A0B5] text-[#24A0B5] w-full py-2.5 rounded-lg hover:cursor-pointer"
           >
