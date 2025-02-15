@@ -47,10 +47,6 @@ function TicketReady() {
     navigate("/");
   }
 
-  // const handleSubmit = (data) =>{
-  //   localStorage.removeItem(LOCAL_STORAGE_KEY);
-  // }
-
 
   return (
     <>
