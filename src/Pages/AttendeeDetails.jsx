@@ -36,6 +36,7 @@ function AttendeeDetails() {
     register,
     handleSubmit,
     setValue,
+    setError,
     watch,
     formState: { errors },
   } = useForm({
@@ -57,6 +58,14 @@ function AttendeeDetails() {
 
   // Handle form submission
   const onSubmit = (data) => {
+    if(!data.avatar){
+      setError("avatar", {
+        type: "manual",
+        message: "Please upload a profile photo before proceeding.",
+      });
+      return
+    }
+
     console.log("Form Data:", data);
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data)); // Ensure latest data is stored
     navigate("/ticketready");
@@ -111,7 +120,9 @@ function AttendeeDetails() {
                   <img
                     src={imageUrl}
                     alt="uploaded"
-                    className="absolute inset-0 -top-5 w-[220px] h-[200px] rounded-2xl mx-auto"
+                    className={`absolute inset-0 -top-5 w-[220px] h-[200px] rounded-2xl mx-auto ${
+                      errors.avatar ? "border-red-500" : "border-[#24A0B5]"
+                    }`}
                     {...register("avatar")}
                   />
                 ) : (
@@ -133,7 +144,9 @@ function AttendeeDetails() {
                 
                 {imageUrl && (
                   <div
-                    className="absolute inset-0 -top-5 join w-[220px] h-[200px] bg-[#0E464F] border-3 border-[#24A0B5] mx-auto rounded-2xl text-center hover:cursor-pointer pt-16 opacity-0 group-hover:opacity-50 transition-opacity duration-300"
+                    className={`absolute inset-0 -top-5 join w-[220px] h-[200px] bg-[#0E464F] border-3 border-[#24A0B5] mx-auto rounded-2xl text-center hover:cursor-pointer pt-16 opacity-0 group-hover:opacity-50 transition-opacity duration-300 ${
+                      errors.avatar ? "border-red-500" : "border-[#24A0B5]"
+                    }`}
                     onClick={openWidget}
                   >
                     <span className="text-white">
@@ -220,6 +233,7 @@ function AttendeeDetails() {
                   Back
                 </button>
                 <button
+                onClick={()=>onSubmit()}
                   type="submit"
                   style={{ fontFamily: "Jeju" }}
                   className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
@@ -232,6 +246,7 @@ function AttendeeDetails() {
               <div className="lg:hidden block">
               <div className="grid lg:grid-cols-2 gap-4 my-7 px-8 rounded-2xl">
               <button
+              onClick={()=>onSubmit()}
                   type="submit"
                   style={{ fontFamily: "Jeju" }}
                   className="bg-[#24A0B5] text-white w-full py-2.5 rounded-lg hover:cursor-pointer"
